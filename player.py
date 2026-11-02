@@ -1,4 +1,6 @@
 from cards import cards, deck
 
 class player:
-    print('player')
+    def __init__(self, name, deck):
+        self.name()
+        self.deck()
