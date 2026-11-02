@@ -35,7 +35,7 @@ class cards:
         return self.starting_cards
 
 deck1 = cards.shuffle
-
+deck2 = cards.shuffle
 
 class deck:
     # card_hand is the list of card a player currently has
