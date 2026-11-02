@@ -1,4 +1,4 @@
-from player import player
+from player import player, player1, player2
 from cards import deck, cards
 
 def play_round(player1, player2):
@@ -26,6 +26,23 @@ def play_round(player1, player2):
             break
 
         else:
-            continue
             print("War!")
             print("Both players draw again!")
+            continue
+
+print('Welcome to the game of War!')
+
+while player1.card_count() > 0 and player2.card_count() > 0:
+
+    play_round(player1, player2)
+
+    print(player1.name, 'has', player1.card_count, 'cards')
+    print(player2.name, 'has', player2.card_count, 'cards')
+
+    if player1.card_count() > 0 and player2.card_count() > 0:
+        input('Press enter to play the next round.')
+
+if player1.card_count() > 0:
+    print(player1.name, 'wins the game!')
+else:
+    print(player2.name, 'wins the game!')
