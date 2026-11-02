@@ -31,15 +31,38 @@ class cards:
 
     def shuffle(self):
         random.shuffle(self.starting_cards)
+        print(self.starting_cards)
+        return self.starting_cards
+
+deck1 = cards.shuffle
 
 
 class deck:
+    # card_hand is the list of card a player currently has
+    def __init__ (self, deck):
+        self.deck = deck
 
-    def __init__(self):
-        deck_hand = cards
-        
+    # Working on it
+    def show_card(self):
+        self.top_card = cards[0]
+        print(self.top_card)
 
+    def if_lose():
+        pass
 
+    def if_won():
+        pass
+
+    def if_war():
+        pass
+
+#deck1 = cards()
+#print(deck1)
+#deck.show_card(cards.shuffle)
 
 deck1 = cards()
+deck1.shuffle()
 print(deck1)
+cards_before_war = deck(deck1)
+top_card = deck.show_card
+print()
