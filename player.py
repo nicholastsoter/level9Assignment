@@ -2,8 +2,8 @@ from cards import cards, deck, deck1, deck2
 
 class player:
     def __init__(self, name, deck):
-        self.name = name
-        self.deck = deck
+        self.name()
+        self.deck()
 
     def draw_card(self, deck):
         card = self.deck.pop(0)
