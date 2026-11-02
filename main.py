@@ -24,3 +24,8 @@ def play_round(player1, player2):
             print(player2.name, 'wins the round!')
             player1.collect_cards(cards_in_play)
             break
+
+        else:
+            continue
+            print("War!")
+            print("Both players draw again!")
