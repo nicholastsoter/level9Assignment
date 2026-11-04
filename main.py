@@ -1,5 +1,5 @@
 from player import player
-from cards import deck
+from cards import (deck, cards)
 
 def play_round(player1, player2):
 
@@ -8,6 +8,9 @@ def play_round(player1, player2):
     while True:
         card1 = player1.draw_card()
         card2 = player2.draw_card()
+        
+        print(card1)
+        print(card2)
 
         cards_in_play.append(card1)
         cards_in_play.append(card2)
@@ -38,10 +41,12 @@ def main():
     print('Welcome to the game of war!')
 
     #make and shuffle the decks before the game begins
-    deck1 = deck()
-    deck2 = deck()
+    deck1 = cards()
+    deck2 = cards()
     deck1.shuffle()
     deck2.shuffle()
+
+    print(len(deck1.starting_cards))
 
     player1 = player('Player 1', deck1)
     player2 = player('Player 2', deck2)

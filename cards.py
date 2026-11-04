@@ -2,8 +2,9 @@ import random
 
 class cards:
 
-    starting_cards = [] 
+     
     def __init__(self):
+        self.starting_cards = []
         for i in range(1,5):
             if i == 1:
                 suit = " of hearts"
@@ -17,15 +18,20 @@ class cards:
                 card = ("")
                 if j == 1:
                     card = "Ace" + suit
+                    value = 14
                 elif j > 1 and j < 11:
                     card = str(j) + suit
+                    value = j
                 elif j == 11:
                     card = "Jack" + suit
+                    value = 11
                 elif j == 12:
                     card = "Queen" + suit
+                    value = 12
                 elif j == 13:
                     card = "King" + suit
-                
+                    value = 13
+                card = (card, value)
                 self.starting_cards.append(card)
 
     def shuffle(self):
