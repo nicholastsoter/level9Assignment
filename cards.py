@@ -34,9 +34,6 @@ class cards:
         print(self.starting_cards)
         return self.starting_cards
 
-deck1 = cards.shuffle
-
-
 class deck:
     # card_hand is the list of card a player currently has
     def __init__ (self, deck):
@@ -46,6 +43,13 @@ class deck:
     def show_card(self):
         self.top_card = cards[0]
         print(self.top_card)
+        return self.top_card
+
+    def draw_card(self):
+        self.deck.pop(0)
+    
+    def add_cards(self, new_cards):
+        self.deck.extend(new_cards)
 
     def if_lose():
         pass
@@ -53,8 +57,8 @@ class deck:
     def if_won():
         pass
 
-    def if_war():
-        pass
+    def if_war(self):
+        return self.draw_card()
 
 #deck1 = cards()
 #print(deck1)
