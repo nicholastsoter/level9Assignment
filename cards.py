@@ -34,6 +34,9 @@ class cards:
         print(self.starting_cards)
         return self.starting_cards
 
+deck1 = cards.shuffle
+
+
 class deck:
     # card_hand is the list of card a player currently has
     def __init__ (self, deck):
