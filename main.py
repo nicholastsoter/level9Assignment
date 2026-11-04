@@ -27,7 +27,7 @@ def play_round(player1, player2):
 
         else:
             print('War!')
-            # If someone has no card left to play in the war, the other player wins everything
+            #If someone has no card left to play in the war, the other player wins everything
             if not player1.has_cards() or not player2.has_cards():
                 winner = player1 if player1.has_cards() else player2
                 print(winner.name, 'wins the war because the other player ran out of cards!')
@@ -55,3 +55,5 @@ def main():
         if player1.has_cards() and player2.has_cards():
             input('Press enter to play the next round')
             print()
+
+main()
