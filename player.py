@@ -13,11 +13,11 @@ class player:
     def collect_cards(self, won_cards):
         #Adds cards to the bottom of the deck and shuffles them to avoid repeats
         random.shuffle(won_cards)
-        self.deck.extend(won_cards)
+        self.cards.starting_cards.extend(won_cards)
 
     def has_cards(self):
         if len(self.cards.starting_cards) > 0:
             return True
     
     def card_count(self):
-        return len(self.cards)
+        return len(self.cards.starting_cards)

@@ -9,23 +9,23 @@ def play_round(player1, player2):
         card1 = player1.draw_card()
         card2 = player2.draw_card()
         
-        print(card1)
-        print(card2)
+        #print(card1)
+        #print(card2)
 
         cards_in_play.append(card1)
         cards_in_play.append(card2)
 
-        print(player1.name, 'drew the', card1)
-        print(player2.name, 'drew the', card2)
+        print(player1.name, 'drew the', card1[0])
+        print(player2.name, 'drew the', card2[0])
 
-        if card1.value > card2.value:
+        if card1[1] > card2[1]:
             print(player1.name, 'wins the round!')
             player1.collect_cards(cards_in_play)
             return player1
 
-        elif card1.value < card2.value:
+        elif card1[1] < card2[1]:
             print(player2.name, 'wins the round!')
-            player1.collect_cards(cards_in_play)
+            player2.collect_cards(cards_in_play)
             return player2
 
         else:
