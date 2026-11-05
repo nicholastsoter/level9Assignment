@@ -36,7 +36,6 @@ class cards:
 
     def shuffle(self):
         random.shuffle(self.starting_cards)
-        print(self.starting_cards)
         return self.starting_cards
 
 

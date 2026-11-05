@@ -9,8 +9,6 @@ def play_round(player1, player2):
         card1 = player1.draw_card()
         card2 = player2.draw_card()
         
-        #print(card1)
-        #print(card2)
 
         cards_in_play.append(card1)
         cards_in_play.append(card2)
@@ -32,8 +30,12 @@ def play_round(player1, player2):
             print('War!')
             #If someone has no card left to play in the war, the other player wins everything
             if not player1.has_cards() or not player2.has_cards():
-                winner = player1 if player1.has_cards() else player2
-                print(winner.name, 'wins the war because the other player ran out of cards!')
+                if player1.card_count() == 104:
+                    winner = 'Player 1'
+                elif player2.card_count() == 104:
+                    winner = 'Player 2'
+                #winner = player1 if player1.has_cards() else player2
+                print(f'{winner} wins the war because the other player ran out of cards!')
                 winner.collect_cards(cards_in_play)
                 return winner
 
@@ -46,7 +48,7 @@ def main():
     deck1.shuffle()
     deck2.shuffle()
 
-    print(len(deck1.starting_cards))
+    
 
     player1 = player('Player 1', deck1)
     player2 = player('Player 2', deck2)
@@ -60,5 +62,11 @@ def main():
         if player1.has_cards() and player2.has_cards():
             input('Press enter to play the next round')
             print()
+        else:
+            if player1.has_cards():
+                winner = 'Player 1'
+            if player2.has_cards():
+                winner = 'Player 2'
+            print(f'{winner} wins the war because the other player ran out of cards!')
 
 main()
